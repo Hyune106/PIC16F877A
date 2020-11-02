@@ -1,0 +1,193 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     @INTERRUPT_AREA
+02A     @INTERRUPT_AREA
+02B     @TRIS_C
+02C     set
+02D     mod
+02E     second
+02F     minute
+030     hour
+031     day
+032     month
+033     year
+034     lcd_init.i
+034     read_data.address
+034     DEC2BCD.DEC
+034     display.DEC
+034     update_ds1307.@SCRATCH1
+034     MAIN.@SCRATCH1
+034     @PSTRINGC7_645.@SCRATCH1
+035     write_data.address
+035     BCD2DEC.BCD
+035-038 lcd_init.LCD_INIT_STRING
+035     DEC2BCD.a
+035     read_data.data
+035     display.@SCRATCH1
+035     @PSTRINGC7_645.@SCRATCH2
+036     BCD2DEC.a
+036     DEC2BCD.b
+036     write_data.data
+036     @I2C_READ_1.P1
+036     @PSTRINGC7_645.@SCRATCH3
+037     lcd_putc.c
+037     @I2C_WRITE_1.P1
+037     BCD2DEC.b
+037     DEC2BCD.BCD
+037     @I2C_READ_1.@SCRATCH1
+037     @PSTRINGC7_645.@SCRATCH4
+038     @DIV88.P1
+038     BCD2DEC.DEC
+038     lcd_gotoxy.x
+038     @I2C_READ_1.@SCRATCH2
+038     DEC2BCD.@SCRATCH1
+039     lcd_gotoxy.y
+039     @MUL88.P1
+039     @delay_ms1.P2
+039     @DIV88.P3
+039     lcd_init.@SCRATCH1
+039     BCD2DEC.@SCRATCH1
+03A     lcd_gotoxy.address
+03A     @MUL88.P1
+03A     @DIV88.@SCRATCH1
+03B     lcd_gotoxy.@SCRATCH1
+03C     lcd_send_byte.address
+03D     lcd_send_byte.n
+03E     lcd_read_byte.low
+03E     lcd_send_byte.@SCRATCH1
+03F     lcd_send_nibble.n
+03F     lcd_read_byte.high
+040     lcd_read_nibble.n
+040     lcd_read_byte.@SCRATCH1
+041     lcd_read_nibble.@SCRATCH1
+042     set_time.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07F     @INTERRUPT_AREA
+09C.6   C1OUT
+09C.7   C2OUT
+0FF     @INTERRUPT_AREA
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+17F     @INTERRUPT_AREA
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+2FF     @INTERRUPT_AREA
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+47F     @INTERRUPT_AREA
+4FF     @INTERRUPT_AREA
+57F     @INTERRUPT_AREA
+5FF     @INTERRUPT_AREA
+67F     @INTERRUPT_AREA
+6FF     @INTERRUPT_AREA
+77F     @INTERRUPT_AREA
+7FF     @INTERRUPT_AREA
+87F     @INTERRUPT_AREA
+8FF     @INTERRUPT_AREA
+97F     @INTERRUPT_AREA
+9FF     @INTERRUPT_AREA
+A7F     @INTERRUPT_AREA
+AFF     @INTERRUPT_AREA
+B7F     @INTERRUPT_AREA
+BFF     @INTERRUPT_AREA
+C7F     @INTERRUPT_AREA
+CFF     @INTERRUPT_AREA
+D7F     @INTERRUPT_AREA
+DFF     @INTERRUPT_AREA
+E7F     @INTERRUPT_AREA
+EFF     @INTERRUPT_AREA
+F7F     @INTERRUPT_AREA
+FFF     @INTERRUPT_AREA
+
+ROM Allocation:
+00004F  set_time
+00013C  @goto10846
+000146  @goto10901
+000150  @const701.call
+000153  @const703.call
+000156  @const704.call
+000157  @const705.call
+000158  @const706.call
+000159  @const707.call
+00015A  @const708.call
+00015C  @const709.call
+00015E  @const710.call
+000160  @const711.call
+000162  @const712.call
+000164  @const713.call
+000166  @delay_ms1
+00017A  lcd_send_nibble
+0001AA  lcd_read_nibble
+0001DB  lcd_send_byte
+0001E3  lcd_read_byte
+000239  lcd_init
+00027F  lcd_gotoxy
+000291  lcd_putc
+0002BD  @PSTRINGC7_645
+000313  @I2C_WRITE_1
+00036F  read_data
+0003D9  @I2C_READ_1
+00044D  BCD2DEC
+000458  @MUL88
+000482  @DIV88
+000497  DEC2BCD
+0004AF  write_data
+0004F7  update_ds1307
+000547  display
+00055C  MAIN
+00055C  @cinit1
+00056A  @cinit2
+000694  @goto10962
+
+Project Directory:
+    C:\Users\Huyen\Desktop\Project2\DA2_HK1_1617_41302198_LeThiMyHuyen\Code\
+
+Project Files:
+    DoHoSo.c                                                [15-Nov-16 22:35  CRC=A429DDB1]
+    ..\..\..\..\..\..\Program Files\PICC\Devices\16f877A.h  [12-Nov-13 14:35  CRC=81334808]
+    ..\..\..\..\..\..\Program Files\PICC\Drivers\LCD.c      [19-Sep-13 15:38  CRC=D1A6378A]
+
+Source signature=C8A994CD
+
+Units:
+    DoHoSo (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   DoHoSo.xsym
+    Errors:      DoHoSo.err
+    Ext Symbols: DoHoSo.esym
+    INHX8:       DoHoSo.hex
+    Symbols:     DoHoSo.sym
+    List:        DoHoSo.lst
+    Debug/COFF:  DoHoSo.cof
+    Project:     DoHoSo.ccspjt
+    Call Tree:   DoHoSo.tre
+    Statistics:  DoHoSo.STA
